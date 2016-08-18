@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm
 
 def login_request(request):
@@ -29,3 +29,7 @@ def register(request):
 
 def failed(request):
 	render(request, 'failed.html')
+
+def logout_request(request):
+	logout(request)
+	return redirect('/')

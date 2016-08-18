@@ -91,3 +91,10 @@ def comments(request, question_id):
 			return HttpResponse(status=404)
 		serializer = CommentSerializer(comments, many=True)
 		return JSONResponse(serializer.data)
+
+
+# @login_required(login_url='/auth/login')
+# @csrf_exempt
+# def upvote(request, question_id):
+# 	if request.method == 'GET':
+# 		

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     question_description = models.CharField(max_length=400)
-    pub_date = models.DateTimeField('date published')
+    created = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(
     		User,
     		on_delete=models.CASCADE,
